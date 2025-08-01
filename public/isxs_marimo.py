@@ -46,7 +46,7 @@ def load_data():
     loads the data of the included strains
     returns array of lm modes, array of h ids, nested arrays of htilde and frequencies, and array of metadatas
     """
-    file = np.load("marimo_data.npz", allow_pickle=True)
+    file = np.load("public/marimo_data.npz", allow_pickle=True)
     data = file['arr_0']
     hlm = data[0]
     h_id_list = []
