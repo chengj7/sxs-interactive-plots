@@ -47,9 +47,7 @@ jobs:
         run: .venv/bin/hatch run marimo:check
 
       - name: Export notebook
-        run: |
-          .venv/bin/hatch run marimo:convert
-          cp isxs_marimo.py output/
+        run: .venv/bin/hatch run marimo:convert
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
