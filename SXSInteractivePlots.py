@@ -8,11 +8,9 @@ app = marimo.App()
 def _():
     import marimo as mo
     import re
-    import sxs
     import math
     import numpy as np
     import pandas as pd
-    import bilby
     import scipy.interpolate  
     import matplotlib.pyplot as plt
     from IPython.display import display
