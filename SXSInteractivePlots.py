@@ -6,6 +6,8 @@ app = marimo.App()
 
 @app.cell
 def _():
+    import sys
+    sys.path.append('public')
     import marimo as mo
     import re
     import math
