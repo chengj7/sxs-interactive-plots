@@ -20,7 +20,7 @@ def _():
     import plotly.graph_objects as go
     import plotly.io as pio
     pio.renderers.default = 'iframe'
-    import ./public/isxs_marimo
+    import /public/isxs_marimo
     return isxs, mo
 
 
