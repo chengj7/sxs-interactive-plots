@@ -22,7 +22,7 @@ def _():
     pio.renderers.default = 'iframe'
     path_to_data = mo.notebook_location() / "public" / "marimo_data.npz"
     path_to_file = mo.notebook_location() / "public" / "isxs_marimo.py"
-    from .path_to_data import marimo_data.npz
+    from .path_to_data import marimo_data
     from .path_to_file import isxs_marimo
     return isxs, mo
 
