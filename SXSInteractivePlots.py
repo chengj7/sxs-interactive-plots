@@ -20,8 +20,7 @@ def _():
     import plotly.graph_objects as go
     import plotly.io as pio
     pio.renderers.default = 'iframe'
-    path_to_npz = mo.notebook_location() / "public" / "marimo_data.npz"
-    import path_to_npz
+    from .public import isxs_marimo
     return isxs, mo
 
 
