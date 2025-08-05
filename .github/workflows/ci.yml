@@ -42,6 +42,12 @@ jobs:
           uv pip install bilby
           uv pip install requests
 
+      - name: List files in repo root
+        run: ls -l
+
+      - name: List files in output directory (if exists)
+        run: ls -l output || true
+        
       - name: Check marimo
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
         run: .venv/bin/hatch run marimo:check
