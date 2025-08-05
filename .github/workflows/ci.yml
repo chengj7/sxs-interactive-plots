@@ -41,12 +41,21 @@ jobs:
           uv pip install plotly
           uv pip install bilby
           uv pip install requests
-
+        
       - name: List files in repo root
         run: ls -l
 
       - name: List files in output directory (if exists)
         run: ls -l output || true
+
+      - name: Copy isxs_marimo.py to Marimo working directory
+        run: cp isxs_marimo.py /marimo/
+
+      - name: Copy notebook to Marimo working directory
+        run: cp SXSInteractivePlots.py /marimo/notebook.py
+
+      - name: List files in Marimo working directory
+        run: ls -l /marimo/
         
       - name: Check marimo
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
