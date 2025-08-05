@@ -37,7 +37,6 @@ jobs:
           uv venv .venv
           uv pip install --upgrade pip hatch
           uv pip install marimo
-          uv pip install sxs
           uv pip install IPython
           uv pip install plotly
           uv pip install bilby
