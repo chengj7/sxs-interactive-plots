@@ -49,8 +49,9 @@ jobs:
       - name: Export notebook
         run: .venv/bin/hatch run marimo:convert
 
-      - name: Copy isxs_marimo.py to working directory
-        run: cp isxs_marimo.py /marimo/
+      - name: Run Marimo notebook
+        run: marimo run SXSInteractivePlots.py
+        working-directory: ${{ github.workspace }}
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
