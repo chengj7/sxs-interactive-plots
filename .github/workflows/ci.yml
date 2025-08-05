@@ -59,7 +59,7 @@ jobs:
         run: .venv/bin/hatch run marimo:convert
 
       - name: check output directory
-        run: ls -l && mkdir -p output/plots/ && cp ./plots/isxs_marimo.py ./output/plots
+        run: ls -l
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
