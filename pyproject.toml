@@ -9,6 +9,7 @@ requires-python = ">=3.13,<3.14"
 
 # Ditto the fakery here.  This just lets marimo run
 [tool.setuptools.packages.find]
+include = ["plots"]
 exclude = ["document_root*"]
 
 [tool.hatch.envs.marimo]
@@ -16,6 +17,7 @@ extra-dependencies = [
   "marimo",
   "uv",
 ]
+
 [tool.hatch.envs.marimo.scripts]
 edit = "marimo edit --sandbox SXSInteractivePlots.py"
 run = "marimo run --sandbox SXSInteractivePlots.py"
