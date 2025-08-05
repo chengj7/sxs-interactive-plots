@@ -40,6 +40,7 @@ jobs:
           uv pip install IPython
           uv pip install plotly
           uv pip install bilby
+          uv pip install requests
 
       - name: Check marimo
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
