@@ -42,31 +42,15 @@ jobs:
           uv pip install bilby
           uv pip install requests
         
-      - name: List files in repo root
-        run: ls -l
-
-      - name: List files in output directory (if exists)
-        run: ls -l output || true
-
-        
-      # Add these steps to copy notebook and module to /marimo
-      - name: Ensure marimo directory exists
-        run: mkdir -p marimo
-
-      - name: Copy notebook and module to marimo
-        run: |
-          cp SXSInteractivePlots.py marimo/notebook.py
-          cp isxs_marimo.py marimo/isxs_marimo.py
-
-      - name: List files in marimo
-        run: ls -l marimo
+      - name: Install local package
+        run: uv pip install .
 
       - name: Check marimo
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
-        run: .venv/bin/hatch run marimo:check marimo/notebook.py
+        run: .venv/bin/hatch run marimo:check 
 
       - name: Export notebook
-        run: .venv/bin/hatch run marimo:convert marimo/notebook.py
+        run: .venv/bin/hatch run marimo:convert
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
