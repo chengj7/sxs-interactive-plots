@@ -20,8 +20,12 @@ def _():
     import plotly.graph_objects as go
     import plotly.io as pio
     pio.renderers.default = 'iframe'
-    npz_file_path = mo.notebook_location() / "public" / "marimo_data.npz"
-    data = np.load(str(npz_file_path))
+    import requests
+    from io import BytesIO
+    npz_file_path = "https://chengj7.github.io/sxs-interactive-plots/public/marimo_data.npz"
+    response = requests.get(npz_file_path)
+    print(response.content[:100])
+    data = np.load(BytesIO(response.content))
     return isxs, mo
 
 
