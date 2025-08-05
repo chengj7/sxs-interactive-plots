@@ -48,21 +48,25 @@ jobs:
       - name: List files in output directory (if exists)
         run: ls -l output || true
 
-      - name: Copy isxs_marimo.py to Marimo working directory
-        run: cp isxs_marimo.py /marimo/
-
-      - name: Copy notebook to Marimo working directory
-        run: cp SXSInteractivePlots.py /marimo/notebook.py
-
-      - name: List files in Marimo working directory
-        run: ls -l /marimo/
         
+      # Add these steps to copy notebook and module to /marimo
+      - name: Ensure /marimo directory exists
+        run: mkdir -p /marimo
+
+      - name: Copy notebook and module to /marimo
+        run: |
+          cp SXSInteractivePlots.py /marimo/notebook.py
+          cp isxs_marimo.py /marimo/isxs_marimo.py
+
+      - name: List files in /marimo
+        run: ls -l /marimo
+
       - name: Check marimo
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
-        run: .venv/bin/hatch run marimo:check
+        run: .venv/bin/hatch run marimo:check /marimo/notebook.py
 
       - name: Export notebook
-        run: .venv/bin/hatch run marimo:convert
+        run: .venv/bin/hatch run marimo:convert /marimo/notebook.py
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
