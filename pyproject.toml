@@ -19,7 +19,7 @@ extra-dependencies = [
 ]
 
 [tool.hatch.envs.marimo.scripts]
-edit = "marimo edit --sandbox SXSInteractivePlots.py"
-run = "marimo run --sandbox SXSInteractivePlots.py"
-check = "uv run SXSInteractivePlots.py"  # Just to see if the script runs successfully
-convert = "marimo export html-wasm SXSInteractivePlots.py -f -o output/ --mode edit"
+edit = "marimo edit --sandbox ./plots/SXSInteractivePlots.py"
+run = "marimo run --sandbox ./plots/SXSInteractivePlots.py"
+check = "uv run ./plots/SXSInteractivePlots.py"  # Just to see if the script runs successfully
+convert = "marimo export html-wasm ./plots/SXSInteractivePlots.py -f -o output/ --mode edit"
