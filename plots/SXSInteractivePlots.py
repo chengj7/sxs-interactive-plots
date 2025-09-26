@@ -21,6 +21,21 @@ def _():
     import plotly.io as pio
     pio.renderers.default = 'iframe'
     import requests
+    script_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/main/plots/isxs_marimo.py"
+    script_response = requests.get(script_file_path)
+
+    public_dir = os.path.join(base_dir, "public")
+    os.makedirs(public_dir, exist_ok=True)
+
+    if script_response.status_code == 200:
+        file_path = os.path.join(public_dir, "isxs_marimo.py")
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(script_response.text)
+    else:
+        raise Exception(f"Failed to download file: {script_response.status_code}")
+
+    sys.path.append(public_dir)
+    import isxs_marimo
     #from io import BytesIO
     #npz_file_path = "https://chengj7.github.io/sxs-interactive-plots/public/marimo_data.npz"
     #response = requests.get(npz_file_path)
