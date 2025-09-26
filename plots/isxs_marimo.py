@@ -146,10 +146,10 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
     h_idx = load_index(h_id_list, h_id)
     freq, htilde = load_plots(strain_data, h_idx)
     fig = iplt_lm(freq, htilde, hlm, Mass.value, Distance.value)
+    """
     fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                          line=dict(color='orange', width=2),
                          name="CE Noise Curve"))
-    """
     fig.add_trace(go.Scatter(x=ligo_o4_asd_amplitude, y=ligo_o4_asd_frequency,
                          line=dict(color='orchid', width=2),
                          name="aLIGO Noise Curve"))
