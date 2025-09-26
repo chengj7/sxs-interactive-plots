@@ -25,6 +25,7 @@ def _():
     script_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/main/plots/isxs_marimo.py"
     script_response = requests.get(script_file_path)
 
+    base_dir = os.getcwd()
     public_dir = os.path.join(base_dir, "public")
     os.makedirs(public_dir, exist_ok=True)
 
