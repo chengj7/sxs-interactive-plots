@@ -1,7 +1,6 @@
 import math
 import numpy as np
 import csv
-import bilby
 import re
 import plotly.graph_objects as go
 import marimo as mo
