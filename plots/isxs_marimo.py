@@ -17,6 +17,7 @@ r = 3.086e24
 """
 Creating the noise curves
 """
+"""
 ce = bilby.gw.detector.psd.PowerSpectralDensity(psd_file = 'CE_psd.txt', asd_file = 'CE_wb_asd.txt')
 ligo_o4 = bilby.gw.detector.psd.PowerSpectralDensity(asd_file = 'aLIGO_O4_high_asd.txt')
 
@@ -39,7 +40,7 @@ for i in ligo_o4_asd:
     ligo_o4_asd_amplitude.append(float(split_line[0]))
     ligo_o4_asd_frequency.append(float(split_line[1]))
 #print(ligo_o4_asd_frequency)
-
+"""
 def load_data():
     """
     loads the data of the included strains
@@ -148,9 +149,11 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
     fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                          line=dict(color='orange', width=2),
                          name="CE Noise Curve"))
+    """
     fig.add_trace(go.Scatter(x=ligo_o4_asd_amplitude, y=ligo_o4_asd_frequency,
                          line=dict(color='orchid', width=2),
                          name="aLIGO Noise Curve"))
+    """
     markdown = make_markdown(metadata_list, dropdown, h_idx)
     plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
     plot 
