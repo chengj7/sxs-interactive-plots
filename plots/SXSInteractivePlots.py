@@ -21,6 +21,7 @@ def _():
     import plotly.io as pio
     pio.renderers.default = 'iframe'
     import requests
+    import os
     script_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/main/plots/isxs_marimo.py"
     script_response = requests.get(script_file_path)
 
