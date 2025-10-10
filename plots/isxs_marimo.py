@@ -40,7 +40,7 @@ def load_data():
     npz_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/marimodata.npz"
     response = requests.get(npz_file_path)
     npz_file = np.load(BytesIO(response.content))
-    data = file['arr_0']
+    data = npz_file['arr_0']
     hlm = data[0]
     h_id_list = []
     strain_data = []
