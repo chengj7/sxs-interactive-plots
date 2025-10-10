@@ -43,6 +43,12 @@ def _():
 
 @app.cell
 def _(isxs):
+    ce_asd_amplitude, ce_asd_frequency, ligo_asd_amplitude, ligo_asd_frequency = isxs.load_noise_curves()
+    return ce_asd_amplitude, ce_asd_frequency, ligo_asd_amplitude, ligo_asd_frequency
+
+
+@app.cell
+def _(isxs):
     #hlm, h_id_list, strain_data, metadata_list = isxs.load_data()
     return h_id_list, hlm, metadata_list, strain_data
 
