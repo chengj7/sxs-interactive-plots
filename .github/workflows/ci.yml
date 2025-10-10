@@ -60,7 +60,7 @@ jobs:
 
 
       - name: check output directory
-        run: ls -l && mkdir -p output/plots/ && cp ./plots/isxs_marimo.py ./output/plots && ls -l ./output && ls -l ./output/plots && ls -l ./output/assets
+        run: ls -l && mkdir -p output/plots/ && cp ./plots/isxs_marimo.py ./output/plots && cp ./plots/marimodata.npz ./output/plots && ls -l ./output && ls -l ./output/plots && ls -l ./output/assets
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
