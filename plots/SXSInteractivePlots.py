@@ -16,7 +16,6 @@ def _():
     import scipy.interpolate  
     import matplotlib.pyplot as plt
     from IPython.display import display
-    #from plots import isxs_marimo as isxs
     import plotly.graph_objects as go
     import plotly.io as pio
     pio.renderers.default = 'iframe'
