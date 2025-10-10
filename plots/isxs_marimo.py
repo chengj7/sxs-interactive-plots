@@ -19,19 +19,19 @@ r = 3.086e24
 """
 Creating the noise curves
 """
-"""
+
 ce_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ce_noise.npz"
 ce_response = requests.get(ce_file_path)
-ce_noise = np.load(BytesIO(ce_response.content), allow_pickle=True)
+ce_noise = np.load(BytesIO(ce_response.content))
 ce_asd_amplitude = ce_noise[0]
 ce_asd_frequency = ce_noise[1]
 
 ligo_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ligo_noise.npz"
 ligo_response = requests.get(ligo_file_path)
-ligo_noise = np.load(BytesIO(ligo_response.content), allow_pickle=True)
+ligo_noise = np.load(BytesIO(ligo_response.content))
 ligo_asd_amplitude = ligo_noise[0]
 ligo_asd_frequency = ligo_noise[1]
-"""
+
 def load_data():
     """
     loads the data of the included strains
