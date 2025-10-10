@@ -37,7 +37,7 @@ def _():
         raise Exception(f"Failed to download file: {script_response.status_code}")
 
     sys.path.append(public_dir)
-    import isxs_marimo
+    import isxs_marimo as isxs
     #from io import BytesIO
     #npz_file_path = "https://chengj7.github.io/sxs-interactive-plots/public/marimo_data.npz"
     #response = requests.get(npz_file_path)
