@@ -20,19 +20,17 @@ r = 3.086e24
 Creating the noise curves
 """
 
-def load_noise_curves():
-    ce_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ce_noise.npz"
-    ce_response = requests.get(ce_file_path)
-    ce_noise = np.load(BytesIO(ce_response.content))
-    ce_asd_amplitude = ce_noise['arr_0'][0]
-    ce_asd_frequency = ce_noise['arr_0'][1]
+ce_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ce_noise.npz"
+ce_response = requests.get(ce_file_path)
+ce_noise = np.load(BytesIO(ce_response.content))
+ce_asd_amplitude = ce_noise['arr_0'][0]
+ce_asd_frequency = ce_noise['arr_0'][1]
 
-    ligo_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ligo_noise.npz"
-    ligo_response = requests.get(ligo_file_path)
-    ligo_noise = np.load(BytesIO(ligo_response.content))
-    ligo_asd_amplitude = ligo_noise['arr_0'][0]
-    ligo_asd_frequency = ligo_noise['arr_0'][1]
-    return ce_asd_amplitude, ce_asd_frequency, ligo_asd_amplitude, ligo_asd_frequency
+ligo_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ligo_noise.npz"
+ligo_response = requests.get(ligo_file_path)
+ligo_noise = np.load(BytesIO(ligo_response.content))
+ligo_asd_amplitude = ligo_noise['arr_0'][0]
+ligo_asd_frequency = ligo_noise['arr_0'][1]
 
 def load_data():
     """
@@ -141,14 +139,14 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
     h_idx = load_index(h_id_list, h_id)
     freq, htilde = load_plots(strain_data, h_idx)
     fig = iplt_lm(freq, htilde, hlm, Mass.value, Distance.value)
-    """
+    
     fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                          line=dict(color='orange', width=2),
                          name="CE Noise Curve"))
     fig.add_trace(go.Scatter(x=ligo_o4_asd_amplitude, y=ligo_o4_asd_frequency,
                          line=dict(color='orchid', width=2),
                          name="aLIGO Noise Curve"))
-    """
+    
     markdown = make_markdown(metadata_list, dropdown, h_idx)
     plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
     plot 
