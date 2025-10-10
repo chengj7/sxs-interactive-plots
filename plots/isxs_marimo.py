@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import marimo as mo
 from IPython.display import display
 import plotly.io as pio
+import requests
 pio.renderers.default = 'iframe'
 
 G = 6.67430e-11
