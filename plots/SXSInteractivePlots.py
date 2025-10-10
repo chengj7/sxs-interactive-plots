@@ -42,7 +42,7 @@ def _():
 
 
 @app.cell
-def _(isxs):
+def _(mo):
     ce_asd_amplitude, ce_asd_frequency, ligo_asd_amplitude, ligo_asd_frequency = isxs.load_noise_curves()
     return ce_asd_amplitude, ce_asd_frequency, ligo_asd_amplitude, ligo_asd_frequency
 
