@@ -7,6 +7,7 @@ import marimo as mo
 from IPython.display import display
 import plotly.io as pio
 import requests
+from io import BytesIO
 pio.renderers.default = 'iframe'
 
 G = 6.67430e-11
