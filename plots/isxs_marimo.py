@@ -15,7 +15,6 @@ c = 3e8
 M = 6.563e+31
 r = 3.086e24
 
-
 """
 Creating the noise curves
 """
