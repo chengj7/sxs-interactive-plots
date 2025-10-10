@@ -16,13 +16,13 @@ def _():
     import scipy.interpolate  
     import matplotlib.pyplot as plt
     from IPython.display import display
-    from plots import isxs_marimo as isxs
+    #from plots import isxs_marimo as isxs
     import plotly.graph_objects as go
     import plotly.io as pio
     pio.renderers.default = 'iframe'
     import requests
     import os
-    script_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/main/plots/isxs_marimo.py"
+    script_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/isxs_marimo.py"
     script_response = requests.get(script_file_path)
 
     base_dir = os.getcwd()
