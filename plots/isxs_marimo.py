@@ -17,36 +17,26 @@ r = 3.086e24
 """
 Creating the noise curves
 """
-"""
-ce = bilby.gw.detector.psd.PowerSpectralDensity(psd_file = 'CE_psd.txt', asd_file = 'CE_wb_asd.txt')
-ligo_o4 = bilby.gw.detector.psd.PowerSpectralDensity(asd_file = 'aLIGO_O4_high_asd.txt')
+ce_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ce_noise.npz"
+ce_response = requests.get(ce_file_path)
+ce_noise = np.load(BytesIO(response.content))
+ce_asd_amplitude = ce_noise[0]
+ce_asd_frequency = ce_noise[1]
 
-ce_asd_file = open(ce.asd_file, "r")
-ce_asd = ce_asd_file.readlines()
-ce_asd_file.close()
-ce_asd_amplitude = []; ce_asd_frequency = []
-for i in ce_asd:
-    split_line = re.split(" |\n", i)
-    ce_asd_amplitude.append(float(split_line[0]))
-    ce_asd_frequency.append(float(split_line[1]))
-#print(ce_asd_frequency)
+ligo_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/ligo_noise.npz"
+ligo_response = requests.get(ligo_file_path)
+ligo_noise = np.load(BytesIO(response.content))
+ligo_asd_amplitude = ligo_noise[0]
+ligo_asd_frequency = ligo_noise[1]
 
-ligo_o4_asd_file = open(ligo_o4.asd_file, "r")
-ligo_o4_asd = ligo_o4_asd_file.readlines()
-ligo_o4_asd_file.close()
-ligo_o4_asd_amplitude = []; ligo_o4_asd_frequency = []
-for i in ligo_o4_asd:
-    split_line = re.split(" |\n", i)
-    ligo_o4_asd_amplitude.append(float(split_line[0]))
-    ligo_o4_asd_frequency.append(float(split_line[1]))
-#print(ligo_o4_asd_frequency)
-"""
 def load_data():
     """
     loads the data of the included strains
     returns array of lm modes, array of h ids, nested arrays of htilde and frequencies, and array of metadatas
     """
-    file = np.load("public/marimo_data.npz", allow_pickle=True)
+    npz_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/marimodata.npz"
+    response = requests.get(npz_file_path)
+    npz_file = np.load(BytesIO(response.content))
     data = file['arr_0']
     hlm = data[0]
     h_id_list = []
