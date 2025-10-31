@@ -22,4 +22,4 @@ extra-dependencies = [
 edit = "marimo edit --sandbox ./plots/SXSInteractivePlots.py"
 run = "marimo run --sandbox ./plots/SXSInteractivePlots.py"
 check = "uv run ./plots/SXSInteractivePlots.py"  # Just to see if the script runs successfully
-convert = "marimo export html-wasm ./plots/SXSInteractivePlots.py -f -o output/ --mode run"
+convert = "marimo export html-wasm ./plots/SXSInteractivePlots.py -f -o output/ --mode edit"
