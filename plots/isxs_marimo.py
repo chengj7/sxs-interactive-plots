@@ -147,7 +147,9 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
                          name="aLIGO Noise Curve"))
     
     markdown = make_markdown(metadata_list, dropdown, h_idx)
-    plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
+    vertical_fig = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
+    #plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
+    plot = mo.hstack([vertical_fig, markdown])
     plot 
     
     return plot
