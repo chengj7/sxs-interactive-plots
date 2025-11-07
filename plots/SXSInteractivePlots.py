@@ -1,3 +1,7 @@
+# ---
+# display-mode: full
+# ---
+
 import marimo
 
 __generated_with = "0.14.0"
