@@ -1,3 +1,16 @@
+# /// script
+# requires-python = ">=3.13"
+# dependencies = [
+#     "ipython==9.7.0",
+#     "matplotlib==3.10.7",
+#     "numpy==2.3.4",
+#     "pandas==2.3.3",
+#     "plotly==6.4.0",
+#     "requests==2.32.5",
+#     "scipy==1.16.3",
+# ]
+# ///
+
 # ---
 # marimo-version: 0.17.7
 # display-mode: full
@@ -5,8 +18,8 @@
 
 import marimo
 
-__generated_with = "0.14.0"
-app = marimo.App()
+__generated_with = "0.14.16"
+app = marimo.App(width="full", app_title="waveform-explorer")
 
 
 @app.cell
