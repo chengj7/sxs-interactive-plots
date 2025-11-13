@@ -1,0 +1,7 @@
+build
+iframe_figures
+output
+plots.black_holes.org.egg-info
+__pycache__
+.ipynb_checkpoints
+uv.lock
