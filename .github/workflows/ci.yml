@@ -10,7 +10,7 @@ on:
 env:
   PYTHONUNBUFFERED: "1"
   FORCE_COLOR: "1"
-  
+
 jobs:
   export-marimo-and-publish:
     runs-on: ubuntu-latest
@@ -44,10 +44,10 @@ jobs:
           uv pip install plotly
           uv pip install bilby
           uv pip install requests
-        
+
       - name: Install local package
         run: uv pip install .
-        
+
       - name: check directory
         run: ls -l ./plots
 
@@ -59,17 +59,25 @@ jobs:
         run: .venv/bin/hatch run marimo:convert
 
       - name: check output directory
-        run: ls -l && mkdir -p output/plots/ && cp ./plots/isxs_marimo.py ./output/plots && cp ./plots/marimodata.npz ./output/plots && cp ./plots/ce_noise.npz ./output/plots && cp ./plots/ligo_noise.npz ./output/plots && ls -l ./output && ls -l ./output/plots && ls -l ./output/assets
+        run: |
+          ls -l
+          mkdir -p output/plots/
+          cp ./plots/isxs_marimo.py ./output/plots
+          cp ./plots/marimodata.npz ./output/plots
+          cp ./plots/ce_noise.npz ./output/plots
+          cp ./plots/ligo_noise.npz ./output/plots
+          ls -l ./output
+          ls -l ./output/plots
+          ls -l ./output/assets
 
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: output
-          
+
       - name: Deploy to GitHub Pages
         # Be sure to allow this under Settings > Pages > Build and deployment > Source > Github Actions
         id: deployment
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages
-          

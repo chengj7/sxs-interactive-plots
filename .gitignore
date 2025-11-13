@@ -5,3 +5,4 @@ plots.black_holes.org.egg-info
 __pycache__
 .ipynb_checkpoints
 uv.lock
+public/isxs_marimo.py
