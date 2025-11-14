@@ -7,13 +7,13 @@
 #     "pandas==2.3.3",
 #     "plotly==6.4.0",
 #     "requests==2.32.5",
+      "marimo==0.17.8",
 #     "scipy==1.16.3",
 # ]
 # ///
 
 # ---
 # marimo-version: 0.17.7
-# display-mode: full
 # ---
 
 import marimo
