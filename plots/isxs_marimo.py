@@ -122,7 +122,6 @@ def make_markdown(metadata_list, dropdown, idx):
     cat = ["n orbits", "mass ratio", "eccentricity", "chi1", "chi2", "chi1_perp", "chi2_perp"]
     line1 = mo.md(f"""<h1 style="font-size: 24px;">{dropdown.value} Metadata:</h1>""")
     df = pd.DataFrame({"Parameter": [cat[i] for i in range(len(cat))], "Value": [metadata_list[idx][1][j] for j in range(len(metadata_list[idx][1]))]})
-    transformed_df = mo.ui.dataframe(df)
     table = mo.ui.table(
         data = df,
         pagination = False
