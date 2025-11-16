@@ -113,7 +113,7 @@ def _(
     metadata_list,
     strain_data,
 ):
-    isxs.run(dropdown_MR.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_MR, Distance_MR, dropdown_MR, show_CE, show_aLIGO)
+    isxs.run(dropdown.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown, show_CE, show_aLIGO)
     return
 
 @app.cell
