@@ -127,17 +127,15 @@ def make_markdown(metadata_list, dropdown, idx):
         pagination = False
     )
     markdown = mo.vstack([line1, mo.md("-----------"), table])
-    show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
-    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve")
-    return markdown, show_CE, show_aLIGO
+    return markdown
     
-def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown):
+def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown, show_CE, show_aLIGO):
     dropdown
     h_idx = load_index(h_id_list, h_id)
     freq, htilde = load_plots(strain_data, h_idx)
     fig = iplt_lm(freq, htilde, hlm, Mass.value, Distance.value)
     
-    markdown, show_CE, show_aLIGO = make_markdown(metadata_list, dropdown, h_idx)
+    markdown = make_markdown(metadata_list, dropdown, h_idx)
     if show_CE.value:
         fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                              line=dict(color='orange', width=2),
