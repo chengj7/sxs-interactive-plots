@@ -127,15 +127,17 @@ def make_markdown(metadata_list, dropdown, idx):
         pagination = False
     )
     markdown = mo.vstack([line1, mo.md("-----------"), table])
-    return markdown
+    show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
+    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve")
+    return markdown, show_CE, show_aLIGO
     
 def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown):
     dropdown
     h_idx = load_index(h_id_list, h_id)
     freq, htilde = load_plots(strain_data, h_idx)
     fig = iplt_lm(freq, htilde, hlm, Mass.value, Distance.value)
-    show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
-    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve")
+    
+    markdown, show_CE, show_aLIGO = make_markdown(metadata_list, dropdown, h_idx)
     if show_CE.value:
         fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                              line=dict(color='orange', width=2),
@@ -144,8 +146,7 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
         fig.add_trace(go.Scatter(x=ligo_o4_asd_amplitude, y=ligo_o4_asd_frequency,
                              line=dict(color='orchid', width=2),
                              name="aLIGO Noise Curve"))
-    
-    markdown = make_markdown(metadata_list, dropdown, h_idx)
+
     vertical_info = mo.vstack([markdown, show_CE, show_aLIGO])
     vertical_fig = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig])
     #plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
