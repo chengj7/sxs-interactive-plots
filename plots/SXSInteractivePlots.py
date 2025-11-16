@@ -108,7 +108,7 @@ def _(mo):
         label="Choose a system:",
         searchable=True,
     )
-    Distance_ecc = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True, full_with=True)
+    Distance_ecc = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True, full_width=True)
     Mass_ecc = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True, full_width=True)
     return Distance_ecc, Mass_ecc, dropdown_ecc
 
