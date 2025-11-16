@@ -59,6 +59,10 @@ def _(isxs):
     hlm, h_id_list, strain_data, metadata_list = isxs.load_data()
     return h_id_list, hlm, metadata_list, strain_data
 
+@app.cell
+def _(mo):
+    show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
+    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve")
 
 @app.cell
 def _(mo):
@@ -90,7 +94,7 @@ def _(
     metadata_list,
     strain_data,
 ):
-    isxs.run(dropdown_MR.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_MR, Distance_MR, dropdown_MR)
+    isxs.run(dropdown_MR.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_MR, Distance_MR, dropdown_MR, show_CE, show_aLIGO)
     return
 
 
@@ -124,7 +128,7 @@ def _(
     metadata_list,
     strain_data,
 ):
-    isxs.run(dropdown_ecc.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_ecc, Distance_ecc, dropdown_ecc)
+    isxs.run(dropdown_ecc.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_ecc, Distance_ecc, dropdown_ecc, show_CE, show_aLIGO)
     return
 
 
@@ -158,7 +162,7 @@ def _(
     metadata_list,
     strain_data,
 ):
-    isxs.run(dropdown_prec.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_prec, Distance_prec, dropdown_prec)
+    isxs.run(dropdown_prec.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass_prec, Distance_prec, dropdown_prec, show_CE, show_aLIGO)
     return
 
 
