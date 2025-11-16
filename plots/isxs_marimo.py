@@ -135,7 +135,7 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
     freq, htilde = load_plots(strain_data, h_idx)
     fig = iplt_lm(freq, htilde, hlm, Mass.value, Distance.value)
     show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
-    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve)
+    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve")
     fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                          line=dict(color='orange', width=2),
                          name="CE Noise Curve"))
