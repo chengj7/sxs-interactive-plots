@@ -123,20 +123,6 @@ def make_markdown(metadata_list, dropdown, idx):
     df = pd.Dataframe({"Parameter": [cat[i] for i in range(len(cat))], "Value": [metadata_list[idx][1][j] for j in range(len(metadata_list[idx][1]))]})
     transformed_df = mo.ui.dataframe(df)
     markdown = mo.vstack([line1, mo.md("-----------"), transformed_df])
-    """
-    line1 = mo.md(f"""<h1 style="font-size: 24px;">{dropdown.value} Metadata:</h1>""")
-    line3 = mo.md(
-        f
-        n orbits: {metadata_list[idx][1][0]:.3g}  
-        mass ratio: {metadata_list[idx][1][1]:.3g}  
-        eccentricity: {metadata_list[idx][1][2]:.3g}  
-        chi1: {metadata_list[idx][1][3]}  
-        chi2: {metadata_list[idx][1][4]}  
-        chi1_perp: {metadata_list[idx][1][5]:.3g}  
-        chi2_perp: {metadata_list[idx][1][6]:.3g}
-    )
-    markdown = mo.vstack([line1, mo.md("-----------"), line3])
-    """
     return markdown
     
 def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown):
