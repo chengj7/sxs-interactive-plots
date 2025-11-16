@@ -126,8 +126,7 @@ def make_markdown(metadata_list, dropdown, idx):
     """
     line1 = mo.md(f"""<h1 style="font-size: 24px;">{dropdown.value} Metadata:</h1>""")
     line3 = mo.md(
-        f"""
-    
+        f
         n orbits: {metadata_list[idx][1][0]:.3g}  
         mass ratio: {metadata_list[idx][1][1]:.3g}  
         eccentricity: {metadata_list[idx][1][2]:.3g}  
@@ -135,7 +134,6 @@ def make_markdown(metadata_list, dropdown, idx):
         chi2: {metadata_list[idx][1][4]}  
         chi1_perp: {metadata_list[idx][1][5]:.3g}  
         chi2_perp: {metadata_list[idx][1][6]:.3g}
-        """
     )
     markdown = mo.vstack([line1, mo.md("-----------"), line3])
     """
