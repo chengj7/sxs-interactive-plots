@@ -77,7 +77,7 @@ def _(mo):
 @app.cell
 def _(mo):
     if tabs.value == "Mass Ratio":
-        dropdown_ = mo.ui.dropdown(
+        dropdown = mo.ui.dropdown(
             options=["SXS:BBH:1154 (MR:1)", "SXS:BBH:2139 (MR:3)", "SXS:BBH:1441 (MR:8)", "SXS:BBH:1107 (MR:10)"],
             value="SXS:BBH:1154 (MR:1)",
             label="Choose a Mass Ratio",
