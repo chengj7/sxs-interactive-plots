@@ -134,7 +134,8 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
     h_idx = load_index(h_id_list, h_id)
     freq, htilde = load_plots(strain_data, h_idx)
     fig = iplt_lm(freq, htilde, hlm, Mass.value, Distance.value)
-    
+    show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
+    show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve)
     fig.add_trace(go.Scatter(x=ce_asd_amplitude, y=ce_asd_frequency,
                          line=dict(color='orange', width=2),
                          name="CE Noise Curve"))
@@ -143,9 +144,10 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
                          name="aLIGO Noise Curve"))
     
     markdown = make_markdown(metadata_list, dropdown, h_idx)
+    vertical_info = mo.vstack([markdown, show_CE, show_aLIGO])
     vertical_fig = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig])
     #plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
-    plot = mo.hstack([vertical_fig, markdown])
+    plot = mo.hstack([vertical_fig, vertical_info])
     plot 
     
     return plot
