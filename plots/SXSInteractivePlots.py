@@ -74,8 +74,8 @@ def _(mo):
         label="Choose a Mass Ratio",
         searchable=True,
     )
-    Distance_MR = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True)
-    Mass_MR = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True)
+    Distance_MR = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True, full_width=True)
+    Mass_MR = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True, full_width=True)
     return Distance_MR, Mass_MR, dropdown_MR
 
 
@@ -108,8 +108,8 @@ def _(mo):
         label="Choose a system:",
         searchable=True,
     )
-    Distance_ecc = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True)
-    Mass_ecc = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True)
+    Distance_ecc = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True, full_with=True)
+    Mass_ecc = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True, full_width=True)
     return Distance_ecc, Mass_ecc, dropdown_ecc
 
 
@@ -142,8 +142,8 @@ def _(mo):
         label="Choose a system:",
         searchable=True,
     )
-    Distance_prec = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True)
-    Mass_prec = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True)
+    Distance_prec = mo.ui.slider(100.0,10000.0,10.0, label="Distance (Mpc)", include_input=True, full_width=True)
+    Mass_prec = mo.ui.slider(5.0,10000.0,1.0, label="Mass (Solar Mass M☉)", value=33 ,include_input=True, full_width=True)
     return Distance_prec, Mass_prec, dropdown_prec
 
 
