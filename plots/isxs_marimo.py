@@ -145,7 +145,7 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
                              line=dict(color='orchid', width=2),
                              name="aLIGO Noise Curve"))
 
-    vertical_info = mo.vstack([markdown, show_CE, show_aLIGO])
+    vertical_info = mo.vstack([markdown, show_CE, mo.md(f"""<h1 style="font-size: 24px;">Toggle Noise Curves:</h1>"""), show_aLIGO])
     vertical_fig = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig])
     #plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
     plot = mo.hstack([vertical_fig, vertical_info])
