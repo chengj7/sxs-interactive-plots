@@ -57,7 +57,7 @@ jobs:
 
       - name: Export notebook
         run: .venv/bin/hatch run marimo:convert
-
+        
       - name: check output directory
         run: |
           ls -l
