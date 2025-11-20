@@ -66,6 +66,7 @@ jobs:
           cp ./plots/marimodata.npz ./output/plots
           cp ./plots/ce_noise.npz ./output/plots
           cp ./plots/ligo_noise.npz ./output/plots
+          cp ./plots/aplus_noise.npz ./output/plots
           ls -l ./output
           ls -l ./output/plots
           ls -l ./output/assets
