@@ -53,6 +53,9 @@ def _():
     import isxs_marimo as isxs
     return isxs, mo
 
+@app.cell
+def _(mo):
+    mo.md(r"""<h1 style="text-align: center;">Waveform Explorer</h1>""")
 
 @app.cell
 def _(isxs):
