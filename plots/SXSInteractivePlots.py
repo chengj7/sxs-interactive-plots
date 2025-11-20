@@ -63,6 +63,7 @@ def _(isxs):
 def _(mo):
     show_CE = mo.ui.checkbox(value=True, label="CE Noise Curve")
     show_aLIGO = mo.ui.checkbox(value=True, label="aLIGO Noise Curve")
+    show_aPlus = mo.ui.checkbox(value=True, label="A+ LIGO Noise Curve")
 
 @app.cell
 def _(mo):
@@ -113,7 +114,7 @@ def _(
     metadata_list,
     strain_data,
 ):
-    isxs.run(dropdown.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown, show_CE, show_aLIGO)
+    isxs.run(dropdown.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown, show_CE, show_aLIGO, show_aPlus)
     return
 
 @app.cell
