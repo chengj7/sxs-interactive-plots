@@ -152,11 +152,13 @@ def run(h_id, h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdo
         fig.add_trace(go.Scatter(x=ligo_o4_asd_amplitude, y=ligo_o4_asd_frequency,
                              line=dict(color='orchid', width=2),
                              name="aLIGO Noise Curve"))
+    """
     if show_aPlus.value:
         fig.add_trace(go.Scatter(x=aplus_o4_asd_amplitude, y=aplus_o4_asd_frequency,
                              line=dict(color='ivory', width=2),
                              name="A+ LIGO Noise Curve"))
-
+    """
+    
     vertical_info = mo.vstack([markdown, mo.md(f"""<h1 style="font-size: 24px;">Toggle Noise Curves:</h1>"""), show_CE, show_aLIGO, show_aPlus])
     vertical_fig = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig])
     #plot = mo.vstack([dropdown, mo.md("-----------------------------"), Distance, Mass, fig, markdown])
