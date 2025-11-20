@@ -34,7 +34,7 @@ ligo_o4_asd_frequency = ligo_noise['arr_0'][1]
 
 aplus_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/aplus_noise.npz"
 aplus_response = requests.get(aplus_file_path)
-aplus_noise = np.load(BytesIO(aplus_response.content))
+aplus_noise = np.load(BytesIO(aplus_response.content), allow_pickle=True)
 aplus_o4_asd_amplitude = aplus_noise['arr_0'][0]
 aplus_o4_asd_frequency = aplus_noise['arr_0'][1]
 
