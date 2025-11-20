@@ -55,9 +55,9 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(r"""<h1 style="text-align: center;">Waveform Explorer</h1>""")
-    mo.md("-------------------------------")
-    return
+    header = mo.vstack([mo.md(r"""<h1 style="text-align: center;">Waveform Explorer</h1>"""), mo.md("-------------------------------")])
+    header
+    return header
 
 @app.cell
 def _(isxs):
