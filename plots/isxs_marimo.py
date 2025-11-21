@@ -131,6 +131,7 @@ def make_markdown(metadata_list, dropdown, idx):
     table = mo.ui.table(
         data = df,
         pagination = False
+        selection = None
     )
     markdown = mo.vstack([line1, mo.md("-----------"), table])
     return markdown
