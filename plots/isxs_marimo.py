@@ -43,7 +43,7 @@ def load_data():
     loads the data of the included strains
     returns array of lm modes, array of h ids, nested arrays of htilde and frequencies, and array of metadatas
     """
-    npz_file_path = "https://chengj7.github.io/sxs-interactive-plots/plots/marimodata.npz"
+    npz_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/refs/heads/main/plots/marimodata.npz"
     response = requests.get(npz_file_path)
     npz_file = np.load(BytesIO(response.content), allow_pickle=True)
     data = npz_file['arr_0']
