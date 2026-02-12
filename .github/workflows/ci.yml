@@ -46,28 +46,12 @@ jobs:
       - name: Install local package
         run: uv pip install .
 
-      - name: check directory
-        run: ls -l ./plots
-
       - name: Check marimo
         if: "!contains(github.event.head_commit.message, '[skip marimo check]')"
         run: .venv/bin/hatch run marimo:check ./plots/SXSInteractivePlots.py 
 
       - name: Export notebook
         run: .venv/bin/hatch run marimo:convert
-
-      - name: check output directory
-        run: |
-          ls -l
-          mkdir -p output/plots/
-          cp ./plots/isxs_marimo.py ./output/plots
-          cp ./plots/marimodata.npz ./output/plots
-          cp ./plots/ce_noise.npz ./output/plots
-          cp ./plots/ligo_noise.npz ./output/plots
-          cp ./plots/aplus_noise.npz ./output/plots
-          ls -l ./output
-          ls -l ./output/plots
-          ls -l ./output/assets
           
       - name: Upload document_root directory as artifact
         uses: actions/upload-pages-artifact@v3
