@@ -123,7 +123,7 @@ def create_functions(h, t, hlm, metadata):
         
     return frequencies_lm, htilde_lm_scaled
 
-def create_files():
+def create_files(BBH_ids_lis):
     hlm = []
     for ell in range(2, 9):
         for m in range(-ell, ell + 1):
@@ -135,7 +135,10 @@ def create_files():
                     hlm.append([ell, m])
                     
     binaries = ["SXS:BBH:2378", "SXS:BBH:2516", "SXS:BBH:3551", "SXS:BBH:2524", "SXS:BBH:2139", "SXS:BBH:1154", "SXS:BBH:1441", "SXS:BBH:1107", "SXS:BBH:2527", "SXS:BBH:3946", "SXS:BBH:2550", "SXS:BBH:2557", "SXS:BBH:2442", "SXS:BBH:2443", "SXS:BBH:0832", "SXS:BBH:2595", "SXS:BBH:2537", "SXS:BBH:2553", "SXS:BBH:2560"]
-
+    if BBH_ids_lis:
+        for id in BBH_ids_lis:
+            binaries.append(f"SXS:BBH:{id}")
+    
     strain_data = [np.array(hlm)]
     for h_id in binaries:
         metadata, h = load_strain(h_id)
@@ -148,8 +151,13 @@ def create_files():
     #maybe add catalog to data file too?
 
     return np.array(strain_data, dtype=object)
-    
-data = create_files()
 
+#custom 
+print("If you would like to add more BBH systems to examine using waveform explorer, please input the number 'xxxx' of your system of interest in (i.e., '2234' for BBH:2234 in the SXS catalog). If you would like to add more than one, please delineate them by commas. If you are not adding any systems, please do not input anything and simply press enter")
+BBH_ids = input("SXS Catalog BBH ID numbers:")
+BBH_ids_lis = [int(id.strip()) for id in BBH_ids.split(",")]
+
+#create files
+data = create_files(BBH_ids_lis)
 np.savez_compressed("marimo_data", data)
     
