@@ -75,7 +75,8 @@ def _(mo):
     tabs = mo.ui.tabs({
     "Mass Ratio": mo.md(r"""# Varying <span style="color:red">Mass Ratios</span> Examples #"""),
     "Eccentricity": mo.md(r"""# High <span style="color:green">Eccentricity</span> Examples #"""),
-    "Precession": mo.md(r"""# High <span style="color:lightblue">Precession</span> Examples #""")
+    "Precession": mo.md(r"""# High <span style="color:lightblue">Precession</span> Examples #"""),
+    "Custom": mo.md(r"""# User Added Systems #""")
     })
     tabs
     return tabs
@@ -100,6 +101,13 @@ def _(mo):
         dropdown = mo.ui.dropdown(
             options=["SXS:BBH:2442 (MR:1)", "SXS:BBH:2443 (MR:1)", "SXS:BBH:0832 (MR:2)"],
             value="SXS:BBH:2442 (MR:1)",
+            label="Choose a system:",
+            searchable=True,
+        )
+    elif tabs.value == "Custom":
+        dropdown = mo.ui.dropdown(
+            options=[h_id for h_id in h_id_list[19:]],
+            value=options[0],
             label="Choose a system:",
             searchable=True,
         )
