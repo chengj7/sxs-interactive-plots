@@ -107,7 +107,7 @@ def _(mo):
     elif tabs.value == "Custom":
         dropdown = mo.ui.dropdown(
             options=[h_id for h_id in h_id_list[19:]],
-            value=options[0],
+            value=h_id_list[19],
             label="Choose a system:",
             searchable=True,
         )
