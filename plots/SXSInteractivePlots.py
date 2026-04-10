@@ -126,8 +126,7 @@ def _(
     metadata_list,
     strain_data,
 ):
-    if dropdown.value != None:
-        isxs.run(dropdown.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown, show_CE, show_aLIGO, show_aPlus)
+    dropdown.value and isxs.run(dropdown.value[:12], h_id_list, strain_data, metadata_list, hlm, Mass, Distance, dropdown, show_CE, show_aLIGO, show_aPlus)
     return
 
 @app.cell
