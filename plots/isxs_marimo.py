@@ -1,3 +1,4 @@
+import os
 import math
 import numpy as np
 import pandas as pd
@@ -43,7 +44,10 @@ def load_data():
     loads the data of the included strains
     returns array of lm modes, array of h ids, nested arrays of htilde and frequencies, and array of metadatas
     """
-    npz_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/refs/heads/main/plots/marimodata.npz"
+    if os.path.isfile("/marimo_data_files/marimodata.npz"): # for local remote repository, if user wants to add any waveforms of interest
+        npz_file_path = "/marimo_data_files/marimo.npz"
+    else:
+        npz_file_path = "https://raw.githubusercontent.com/chengj7/sxs-interactive-plots/refs/heads/main/plots/marimodata.npz"
     response = requests.get(npz_file_path)
     npz_file = np.load(BytesIO(response.content), allow_pickle=True)
     data = npz_file['arr_0']
