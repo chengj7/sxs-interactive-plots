@@ -109,9 +109,9 @@ def create_functions(h, t, hlm, metadata):
         ini_freq_m = ((metadata.initial_orbital_frequency / (2*np.pi)) * i[-1]) * c**3/(G*M) * 1.15
         fin_freq_m = fin_freq * i[-1]
         ini_index_strain = find_index(frequencies_lm_i, ini_freq_m)
-        print(f"length of {i} mode is {len(frequencies_lm_i[ini_index_strain:])}")
+        #print(f"length of {i} mode is {len(frequencies_lm_i[ini_index_strain:])}")
         frequencies_lm_i, htilde_lm_scaled_i = cut_freq(frequencies_lm_i[ini_index_strain:], htilde_lm_scaled_i[ini_index_strain:])
-        print(f"length of {i} mode post cut is {len(frequencies_lm_i)}")
+        #print(f"length of {i} mode post cut is {len(frequencies_lm_i)}")
         fin_index_strain = find_index(frequencies_lm_i, fin_freq_m)
         cutoff_amp = htilde_lm_scaled_i[fin_index_strain] * 1e-2
         cutoff_index = find_index(htilde_lm_scaled_i[fin_index_strain:], cutoff_amp)
@@ -159,5 +159,5 @@ BBH_ids_lis = [int(id.strip()) for id in BBH_ids.split(",")]
 
 #create files
 data = create_files(BBH_ids_lis)
-np.savez_compressed("marimo_data", data)
+np.savez_compressed("marimodata_custom", data)
     
