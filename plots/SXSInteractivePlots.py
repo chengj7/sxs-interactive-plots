@@ -324,7 +324,7 @@ def _(mo):
 
     The improved lower frequency limit for Cosmic Explorer is crucial in one other way.
     Low-mass binaries ($<10^4\ M_\odot$) radiate in the frequency band generally covered
-    by terrestrial detectors like LIGO/Virgo/KAGRA (LVK), roughly 10–1000 Hz — but
+    by terrestrial detectors like LIGO/Virgo/KAGRA (LVK), roughly 10–1000 Hz, but
     Numerical Relativity (NR) simulations are typically very computationally expensive. As
     a result, NR simulations generally cover only the last ~20 orbits of inspiral before
     computation becomes prohibitively expensive and phase error begins to significantly
@@ -332,13 +332,13 @@ def _(mo):
 
     These ~20 orbits are not guaranteed to cover the entire LVK detection band, which
     becomes an even more serious problem for Cosmic Explorer, given its lower frequency
-    limit of ~5 Hz — potentially missing important physics. Not only does CE observe more
+    limit of ~5 Hz, potentially missing important physics. Not only does CE observe more
     signals at lower frequencies, but for a fixed mass, a system spends longer at lower
     frequencies. This means the system can be observed for longer, more data can be
     gathered to fit its parameters, and its evolution over time can be better understood.
 
     This matters both for detection and for studying subtler physics encoded in the
-    waveform's evolution — such as dark matter effects or physics beyond General
+    waveform's evolution, such as dark matter effects or physics beyond General
     Relativity. If NR alone isn't capable of consistently and efficiently producing
     waveforms spanning CE's full frequency band, this motivates the development of hybrid
     models, such as combining post-Newtonian and Numerical Relativity approaches.
@@ -350,7 +350,7 @@ def _(mo):
     described *ad infinitum*, a natural question when generating waveform simulations is
     how many modes are "enough" to adequately represent the system without losing
     significant physics. The SXS catalog includes modes up to $(l, m) = (8, 8)$, which has
-    proven effective for aLIGO — but Waveform Explorer aims to investigate whether Cosmic
+    proven effective for aLIGO, but Waveform Explorer aims to investigate whether Cosmic
     Explorer's improved sensitivity demands more.
 
     While the $(2,2)$ mode remains dominant, binary black hole systems where the late
@@ -366,7 +366,7 @@ def _(mo):
     The measurement of a second harmonic in addition to the dominant $(2,2)$ mode is what
     first enables measurement of the system's properties, with additional harmonics acting
     as refinements that improve accuracy. Measuring several harmonics is particularly
-    useful for breaking known degeneracies — between a system's distance and orientation,
+    useful for breaking known degeneracies, such as between a system's distance and orientation,
     or between the binary black holes' mass ratio and individual spins ().
     """)
     return (para_motivation,)
