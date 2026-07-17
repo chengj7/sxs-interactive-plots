@@ -152,8 +152,8 @@ def _(mo):
 @app.cell
 def _(mo):
     tabs_writeup = mo.ui.tabs({
-    "Code": mo.md(r"""# About the code #"""),
     "Science": mo.md(r"""# About the science #"""),
+    "Code": mo.md(r"""# About the code #"""),
     })
     tabs_writeup
     return (tabs_writeup,)
