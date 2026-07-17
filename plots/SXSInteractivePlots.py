@@ -447,7 +447,7 @@ def _(mo):
     waveform to remain trustworthy for parameter estimation. This compounds with the
     motivation discussed in the Motivation tab: Cosmic Explorer's improved low-frequency
     sensitivity demands NR waveforms that are both longer *and*, for high-mass-ratio
-    systems, richer in harmonic content, which can be quite an expensive computational ask.
+    systems, richer in harmonic modes, which can be quite an expensive computational ask.
     """)
     return (para_massratio,)
 
