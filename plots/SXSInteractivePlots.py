@@ -399,32 +399,32 @@ def _(mo):
     becoming non-negligible once the masses are unequal.
 
     **2. Post-Newtonian scaling.** In PN theory, the mode amplitudes can be
-    organized by how they scale with the binary's mass parameters — typically the
+    organized by how they scale with the binary's mass parameters, typically the
     symmetric mass ratio $\eta = m_1 m_2 / M^2$ and the (normalized) mass difference
     $\delta = (m_1 - m_2)/M$. The leading-order PN mode structure shows a clean pattern:
     even-$m$ modes ($h_{22}$, $h_{44}$, ...) scale with powers of $\eta$, while odd-$m$
     modes ($h_{21}$, $h_{33}$, ...) scale with odd powers of $\delta$. Since
     $\delta \to 0$ exactly when $m_1 = m_2$, the odd-$m$ modes vanish identically in the
-    equal-mass limit, while the even-$m$ modes — depending only on $\eta$, which stays
-    nonzero for any mass ratio — remain. This leading-order mode structure is laid out
-    explicitly in Table format in Borhanian et al. (2019) [arXiv:1901.08516], comparing PN
-    mode amplitude predictions against NR.
+    equal-mass limit, while the even-$m$ modes remain since they only depend on $\eta$ 
+    (which stays nonzero for any mass ratio). This leading-order mode structure is laid out
+    explicitly in (3.1) in Borhanian et al. (2019) [arXiv:1901.08516], depicting the PN
+    mode amplitude predictions according to theory.
 
     ## Higher Harmonics
 
     As the mass ratio departs from unity, $\delta$ grows away from zero, and the odd-$m$
-    modes — along with higher harmonics more generally — become increasingly significant
+    modes (along with higher harmonics more generally) become increasingly significant
     relative to the dominant $(2,2)$ mode. This is exactly what Waveform Explorer
     illustrates qualitatively: comparing a mass-ratio-1 system against a mass-ratio-10
     system at fixed mass and distance, noticeably more modes become visible above the
     noise floor for both aLIGO and CE as the mass ratio increases.
 
     This trend has also been quantified directly. In a study of higher-order mode
-    measurability, the $33$ mode was shown to grow steadily more significant relative to
-    the dominant $22$ mode as mass ratio increases — for example, at a total mass of
-    $50\,M_\odot$, the $33$ mode reaches about 10% of the $22$ mode's amplitude at a 2:1
+    measurability, the $(3,3)$ mode was shown to grow steadily more significant relative to
+    the dominant $(2,2)$ mode as mass ratio increases. For example, for a system with total mass of
+    $50\,M_\odot$, the $(3,3)$ mode reaches about ~10% of the $(2,2)$ mode's amplitude at a 2:1
     mass ratio, growing to about 20% at a 5:1 mass ratio, and can exceed one-third of the
-    $22$ mode's significance at high total mass and high mass ratio (Mills & Fairhurst,
+    $(2,2)$ mode's significance at high total mass and high mass ratio (Mills & Fairhurst,
     2021, [arXiv:2007.04313]).
 
     ## Potential Consequences for Waveform Modeling
